@@ -1,13 +1,15 @@
-import { Provider } from "react-redux";
-import store from "./store";
-import { BrowserRouter } from "react-router-dom";
-import { render } from "@testing-library/react";
+import { Provider } from 'react-redux';
+import store from './store';
+import { BrowserRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
 
 const Provedores = ({ children }) => (
   <Provider store={store}>
-    <BrowserRouter>{children}</BrowserRouter>
+    <BrowserRouter>
+      {children}
+    </BrowserRouter>
   </Provider>
-);
+)
 
 export const renderComProvedores = (ui, options) =>
   render(ui, {
@@ -15,6 +17,6 @@ export const renderComProvedores = (ui, options) =>
     ...options,
   });
 
-export * from "@testing-library/react";
+export * from '@testing-library/react';
 
 export { renderComProvedores as render };
